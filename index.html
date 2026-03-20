@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio — Landing Pages Profissionais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sage:#3d7a6a;--sage-l:#6aab97;--sage-p:#e6f2ee;--sage-d:#254e43;
+  --cream:#faf8f4;--warm:#f3ede3;--stone:#8a8880;--ink:#1a1a18;--ink-s:#3a3a36;
+  --r:2px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:1.1rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,248,244,0.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(61,122,106,0.1);
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:.04em}
+.logo span{color:var(--sage);font-style:italic}
+nav ul{list-style:none;display:flex;gap:2.2rem}
+nav a{font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color .25s}
+nav a:hover{color:var(--sage)}
+.nav-btn{padding:.55rem 1.4rem;background:var(--sage);color:#fff;border-radius:var(--r);font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .25s}
+.nav-btn:hover{background:var(--sage-d)}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:1fr 1fr}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 5rem}
+.tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:1.8rem}
+.tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--sage)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4.5vw,4.4rem);font-weight:300;line-height:1.06;letter-spacing:-.015em;margin-bottom:1.4rem}
+h1 em{font-style:italic;color:var(--sage)}
+.hero-sub{font-size:.97rem;font-weight:300;line-height:1.8;color:var(--stone);max-width:420px;margin-bottom:2.8rem}
+.btns{display:flex;align-items:center;gap:1.8rem}
+.btn-p{padding:.85rem 2rem;background:var(--sage);color:#fff;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:var(--r);transition:all .25s}
+.btn-p:hover{background:var(--sage-d);transform:translateY(-1px)}
+.btn-s{font-size:.82rem;color:var(--ink-s);text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .25s}
+.btn-s:hover{color:var(--sage)}
+.hero-stats{display:flex;gap:2.8rem;margin-top:3.5rem;padding-top:2.2rem;border-top:1px solid rgba(61,122,106,0.14)}
+.s-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--ink)}
+.s-lbl{font-size:.72rem;color:var(--stone);letter-spacing:.05em;margin-top:.1rem}
+
+/* hero right */
+.hero-r{background:var(--sage-p);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-deco{position:absolute;font-family:'Cormorant Garamond',serif;font-size:18rem;font-style:italic;font-weight:300;color:rgba(61,122,106,.055);bottom:-3rem;right:-2rem;line-height:1;user-select:none;pointer-events:none}
+.mock-wrap{position:relative;width:300px}
+.browser{background:#fff;border-radius:10px;box-shadow:0 28px 70px rgba(37,78,67,.18);overflow:hidden}
+.b-bar{height:32px;background:#ede9e2;display:flex;align-items:center;padding:0 10px;gap:5px}
+.dot{width:8px;height:8px;border-radius:50%}
+.d1{background:#f5a0a0}.d2{background:#f5ce7a}.d3{background:#7acfa3}
+.b-screen{height:190px;background:linear-gradient(155deg,#ddf0e9 0%,#c3e5da 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:1.5rem}
+.ml{height:7px;background:rgba(61,122,106,.22);border-radius:3px}
+.ml.w80{width:80%}.ml.w60{width:60%}.ml.w45{width:45%}
+.ml.acc{background:var(--sage);height:9px;width:55%}
+.mb{width:70px;height:20px;background:var(--sage);border-radius:2px;margin-top:6px}
+.fc{position:absolute;background:#fff;border-radius:7px;padding:.7rem 1rem;box-shadow:0 10px 30px rgba(37,78,67,.13)}
+.fc.t{top:24px;right:-44px}.fc.b{bottom:44px;left:-46px}
+.fc-l{font-size:.65rem;color:var(--stone);letter-spacing:.06em;text-transform:uppercase}
+.fc-v{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--sage-d);margin-top:2px}
+
+/* SECTIONS */
+section{padding:6rem 5rem}
+.sec-tag{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.9rem;display:flex;align-items:center;gap:.55rem}
+.sec-tag::before{content:'';display:inline-block;width:20px;height:1px;background:var(--sage)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:300;line-height:1.15;color:var(--ink);max-width:500px;margin-bottom:3rem}
+h2 em{font-style:italic;color:var(--sage)}
+
+/* PORTFOLIO */
+#portfolio{background:#fff}
+.port-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
+.port-header h2{margin-bottom:0}
+.port-subtitle{font-size:.88rem;font-weight:300;color:var(--stone);line-height:1.7;max-width:320px;text-align:right}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{border-radius:6px;overflow:hidden;border:1px solid rgba(61,122,106,.1);transition:transform .3s,box-shadow .3s;background:#fff}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(37,78,67,.12)}
+.card-thumb{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:1.5rem;position:relative;overflow:hidden;cursor:pointer}
+
+.th-advocacia{background:linear-gradient(150deg,#1c1c1a 0%,#2d2d29 100%)}
+.th-fisio{background:linear-gradient(150deg,#e6f2ee 0%,#c3e5da 100%)}
+.th-joias{background:linear-gradient(150deg,#1a1208 0%,#3a2a10 100%)}
+.th-sacolas{background:linear-gradient(150deg,#1e2a1a 0%,#2a3a22 100%)}
+.th-salao{background:linear-gradient(150deg,#1a1018 0%,#2d1a28 100%)}
+.th-clinica{background:linear-gradient(150deg,#0f1e2a 0%,#152c3a 100%)}
+
+.mini-b{width:85%;max-width:210px;background:#fff;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.25);overflow:hidden}
+.mini-bar{height:18px;display:flex;align-items:center;gap:4px;padding:0 7px}
+.mini-dot{width:5px;height:5px;border-radius:50%}
+.mini-screen{height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:.8rem}
+.ml2{height:5px;border-radius:2px}
+.ml2.w80{width:80%}.ml2.w60{width:60%}.ml2.w45{width:45%}
+
+.th-advocacia .mini-bar{background:#2a2a28}
+.th-advocacia .mini-screen{background:linear-gradient(160deg,#1c1c1a,#2d2d29)}
+.th-advocacia .ml2{background:rgba(180,160,100,.3)}
+.th-advocacia .ml2.acc{background:#b8960c;height:6px;width:50%}
+.th-advocacia .mini-mbtn{width:50px;height:13px;background:#b8960c;border-radius:1px;margin-top:4px}
+
+.th-fisio .mini-bar{background:#d4ede6}
+.th-fisio .mini-screen{background:linear-gradient(160deg,#e6f2ee,#c3e5da)}
+.th-fisio .ml2{background:rgba(61,122,106,.25)}
+.th-fisio .ml2.acc{background:#3d7a6a;height:6px;width:50%}
+.th-fisio .mini-mbtn{width:50px;height:13px;background:#3d7a6a;border-radius:1px;margin-top:4px}
+
+.th-joias .mini-bar{background:#2a2010}
+.th-joias .mini-screen{background:linear-gradient(160deg,#1a1208,#3a2a10)}
+.th-joias .ml2{background:rgba(220,180,80,.25)}
+.th-joias .ml2.acc{background:#c89a30;height:6px;width:50%}
+.th-joias .mini-mbtn{width:50px;height:13px;background:#c89a30;border-radius:1px;margin-top:4px}
+
+.th-sacolas .mini-bar{background:#253020}
+.th-sacolas .mini-screen{background:linear-gradient(160deg,#1e2a1a,#2a3a22)}
+.th-sacolas .ml2{background:rgba(120,180,80,.25)}
+.th-sacolas .ml2.acc{background:#5a9a30;height:6px;width:50%}
+.th-sacolas .mini-mbtn{width:50px;height:13px;background:#5a9a30;border-radius:1px;margin-top:4px}
+
+.th-salao .mini-bar{background:#251820}
+.th-salao .mini-screen{background:linear-gradient(160deg,#1a1018,#2d1a28)}
+.th-salao .ml2{background:rgba(200,120,180,.25)}
+.th-salao .ml2.acc{background:#c060a0;height:6px;width:50%}
+.th-salao .mini-mbtn{width:50px;height:13px;background:#c060a0;border-radius:1px;margin-top:4px}
+
+.th-clinica .mini-bar{background:#142030}
+.th-clinica .mini-screen{background:linear-gradient(160deg,#0f1e2a,#152c3a)}
+.th-clinica .ml2{background:rgba(60,140,200,.25)}
+.th-clinica .ml2.acc{background:#2a7ab8;height:6px;width:50%}
+.th-clinica .mini-mbtn{width:50px;height:13px;background:#2a7ab8;border-radius:1px;margin-top:4px}
+
+.badge{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+.badge.live{background:rgba(61,122,106,.9);color:#d4f0e8}
+.badge.health{background:rgba(61,122,106,.15);color:#3d7a6a}
+
+.card-info{padding:1.1rem 1.2rem 1.3rem}
+.card-cat{font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:.35rem}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--ink);margin-bottom:.4rem}
+.card-desc{font-size:.82rem;font-weight:300;color:var(--stone);line-height:1.6;margin-bottom:.9rem}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid rgba(61,122,106,.1)}
+.card-tags{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag-pill{font-size:.65rem;font-weight:400;letter-spacing:.06em;padding:2px 7px;border-radius:2px;background:var(--sage-p);color:var(--sage-d)}
+.card-link{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:gap .2s;white-space:nowrap}
+.card-link:hover{gap:.55rem}
+
+/* ABOUT */
+#sobre{background:var(--warm)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-txt p{font-size:.95rem;font-weight:300;line-height:1.85;color:var(--ink-s);margin-bottom:1.2rem}
+.skills-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.sk{font-size:.75rem;font-weight:400;letter-spacing:.06em;padding:.35rem .9rem;border:1px solid rgba(61,122,106,.3);border-radius:2px;color:var(--sage-d);background:rgba(61,122,106,.06)}
+.about-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.av-card{background:#fff;border-radius:6px;padding:1.4rem 1.2rem;border:1px solid rgba(61,122,106,.1);display:flex;flex-direction:column;gap:.4rem}
+.av-card.accent{background:var(--sage);border-color:var(--sage)}
+.av-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink)}
+.av-card.accent .av-num{color:#fff}
+.av-lbl{font-size:.75rem;color:var(--stone);font-weight:300}
+.av-card.accent .av-lbl{color:rgba(255,255,255,.7)}
+
+/* CONTACT */
+#contato{background:var(--sage-d)}
+#contato .sec-tag{color:var(--sage-l)}
+#contato .sec-tag::before{background:var(--sage-l)}
+#contato h2{color:#fff;max-width:none}
+#contato h2 em{color:var(--sage-l)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-desc{font-size:.95rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.65);margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:1rem}
+.clink{display:flex;align-items:center;gap:.9rem;font-size:.88rem;font-weight:300;color:rgba(255,255,255,.75);text-decoration:none;transition:color .25s}
+.clink:hover{color:#fff}
+.clink-icon{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.form{display:flex;flex-direction:column;gap:1rem}
+.form input,.form textarea{width:100%;padding:.8rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;outline:none;transition:border-color .25s;resize:vertical}
+.form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.35)}
+.form input:focus,.form textarea:focus{border-color:var(--sage-l)}
+.form textarea{min-height:110px}
+.form-btn{padding:.85rem;background:var(--sage-l);color:var(--sage-d);font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:var(--r);cursor:pointer;transition:background .25s,transform .2s;font-family:'DM Sans',sans-serif}
+.form-btn:hover{background:#fff;transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:#0e1e18;padding:1.8rem 5rem;display:flex;align-items:center;justify-content:space-between}
+footer p{font-size:.75rem;color:rgba(255,255,255,.35);letter-spacing:.06em}
+footer .logo{color:rgba(255,255,255,.5)}
+footer .logo span{color:var(--sage-l)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  nav ul{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-r{display:none}
+  .hero-l{padding:5rem 1.8rem 4rem}
+  section{padding:4rem 1.8rem}
+  .grid{grid-template-columns:1fr 1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .port-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  .port-subtitle{text-align:left}
+  footer{flex-direction:column;gap:.8rem;text-align:center;padding:1.5rem}
+}
+@media(max-width:580px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:2.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">dev<span>folio</span></a>
+  <ul>
+    <li><a href="#portfolio">Projetos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-btn">Fale comigo</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-l">
+    <div class="tag">Desenvolvedor Frontend</div>
+    <h1>Landing pages que<br><em>convertem</em> de<br>verdade.</h1>
+    <p class="hero-sub">Crio sites profissionais para clínicas, consultórios e negócios locais — do design à publicação, com foco em resultado.</p>
+    <div class="btns">
+      <a href="#portfolio" class="btn-p">Ver projetos</a>
+      <a href="#contato" class="btn-s">Solicitar orçamento →</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="s-num">6+</div><div class="s-lbl">Projetos entregues</div></div>
+      <div><div class="s-num">100%</div><div class="s-lbl">Responsivos</div></div>
+      <div><div class="s-num">5★</div><div class="s-lbl">Avaliação média</div></div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-deco">web</div>
+    <div class="mock-wrap">
+      <div class="browser">
+        <div class="b-bar">
+          <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+        </div>
+        <div class="b-screen">
+          <div class="ml acc"></div>
+          <div class="ml w80"></div>
+          <div class="ml w60"></div>
+          <div class="ml w45"></div>
+          <div class="mb"></div>
+        </div>
+      </div>
+      <div class="fc t"><div class="fc-l">Projetos</div><div class="fc-v">6 sites</div></div>
+      <div class="fc b"><div class="fc-l">Disponibilidade</div><div class="fc-v">Aberto</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="port-header">
+    <div>
+      <div class="sec-tag">Portfólio</div>
+      <h2>Projetos <em>reais</em>,<br>resultados concretos.</h2>
+    </div>
+    <p class="port-subtitle">Cada site foi desenvolvido do zero, adaptado ao segmento e ao perfil do cliente.</p>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-thumb th-advocacia" onclick="window.open('https://advocacia-estrategetica.vercel.app/','_blank')">
+        <div class="mini-b">
+          <div class="mini-bar"><div class="mini-dot" style="background:#555"></div><div class="mini-dot" style="background:#555"></div><div class="mini-dot" style="background:#555"></div></div>
+          <div class="mini-screen"><div class="ml2 acc"></div><div class="ml2 w80"></div><div class="ml2 w60"></div><div class="mini-mbtn"></div></div>
+        </div>
+        <span class="badge live">↗ Ver site</span>
+      </div>
+      <div class="card-info">
+        <div class="card-cat">Jurídico</div>
+        <div class="card-name">Dr. Pedro Peres — Advocacia</div>
+        <div class="card-desc">Consultoria jurídica de elite com foco em discrição, rigor técnico e conversão por agendamento privado.</div>
+        <div class="card-footer">
+          <div class="card-tags"><span class="tag-pill">HTML/CSS</span><span class="tag-pill">Dark theme</span><span class="tag-pill">Multipage</span></div>
+          <a href="https://advocacia-estrategetica.vercel.app/" target="_blank" class="card-link">Abrir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb th-fisio" onclick="window.open('https://lading-page-fisio.vercel.app/','_blank')">
+        <div class="mini-b">
+          <div class="mini-bar"><div class="mini-dot" style="background:#9fd6c8"></div><div class="mini-dot" style="background:#9fd6c8"></div><div class="mini-dot" style="background:#9fd6c8"></div></div>
+          <div class="mini-screen"><div class="ml2 acc"></div><div class="ml2 w80"></div><div class="ml2 w60"></div><div class="mini-mbtn"></div></div>
+        </div>
+        <span class="badge health">Saúde</span>
+      </div>
+      <div class="card-info">
+        <div class="card-cat">Fisioterapia</div>
+        <div class="card-name">Landing Page Fisioterapia</div>
+        <div class="card-desc">Página de conversão para clínica de fisioterapia com agendamento online e apresentação dos tratamentos.</div>
+        <div class="card-footer">
+          <div class="card-tags"><span class="tag-pill">HTML/CSS</span><span class="tag-pill">Saúde</span><span class="tag-pill">Agendamento</span></div>
+          <a href="https://lading-page-fisio.vercel.app/" target="_blank" class="card-link">Abrir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb th-joias" onclick="window.open('https://site-duda-sable.vercel.app/','_blank')">
+        <div class="mini-b">
+          <div class="mini-bar"><div class="mini-dot" style="background:#3a2a10"></div><div class="mini-dot" style="background:#3a2a10"></div><div class="mini-dot" style="background:#3a2a10"></div></div>
+          <div class="mini-screen"><div class="ml2 acc"></div><div class="ml2 w80"></div><div class="ml2 w60"></div><div class="mini-mbtn"></div></div>
+        </div>
+        <span class="badge live">↗ Ver site</span>
+      </div>
+      <div class="card-info">
+        <div class="card-cat">E-commerce / Joias</div>
+        <div class="card-name">Dádiva Joias</div>
+        <div class="card-desc">Site elegante para joalheria artesanal com catálogo por categorias — anéis, brincos, colares e pulseiras.</div>
+        <div class="card-footer">
+          <div class="card-tags"><span class="tag-pill">HTML/CSS</span><span class="tag-pill">Catálogo</span><span class="tag-pill">Dark luxo</span></div>
+          <a href="https://site-duda-sable.vercel.app/" target="_blank" class="card-link">Abrir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb th-sacolas" onclick="window.open('https://ms-sacolas.vercel.app/','_blank')">
+        <div class="mini-b">
+          <div class="mini-bar"><div class="mini-dot" style="background:#2a3a22"></div><div class="mini-dot" style="background:#2a3a22"></div><div class="mini-dot" style="background:#2a3a22"></div></div>
+          <div class="mini-screen"><div class="ml2 acc"></div><div class="ml2 w80"></div><div class="ml2 w60"></div><div class="mini-mbtn"></div></div>
+        </div>
+        <span class="badge live">↗ Ver site</span>
+      </div>
+      <div class="card-info">
+        <div class="card-cat">Agronegócio</div>
+        <div class="card-name">MS Sacolas — Equipamentos Agrícolas</div>
+        <div class="card-desc">Site institucional para fabricante de bags agrícolas de Conchal/SP, com catálogo e orçamento via WhatsApp.</div>
+        <div class="card-footer">
+          <div class="card-tags"><span class="tag-pill">HTML/CSS</span><span class="tag-pill">WhatsApp</span><span class="tag-pill">Catálogo</span></div>
+          <a href="https://ms-sacolas.vercel.app/" target="_blank" class="card-link">Abrir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb th-salao" onclick="window.open('https://salao-marco.vercel.app/','_blank')">
+        <div class="mini-b">
+          <div class="mini-bar"><div class="mini-dot" style="background:#2d1a28"></div><div class="mini-dot" style="background:#2d1a28"></div><div class="mini-dot" style="background:#2d1a28"></div></div>
+          <div class="mini-screen"><div class="ml2 acc"></div><div class="ml2 w80"></div><div class="ml2 w60"></div><div class="mini-mbtn"></div></div>
+        </div>
+        <span class="badge live">↗ Ver site</span>
+      </div>
+      <div class="card-info">
+        <div class="card-cat">Beleza &amp; Estética</div>
+        <div class="card-name">Stellar Beauty — Salão</div>
+        <div class="card-desc">Site de alto padrão para salão de beleza com agendamento online integrado ao Google Calendar.</div>
+        <div class="card-footer">
+          <div class="card-tags"><span class="tag-pill">HTML/CSS/JS</span><span class="tag-pill">Agendamento</span><span class="tag-pill">Google Cal</span></div>
+          <a href="https://salao-marco.vercel.app/" target="_blank" class="card-link">Abrir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb th-clinica" onclick="window.open('https://lading-page-clinica.vercel.app/','_blank')">
+        <div class="mini-b">
+          <div class="mini-bar"><div class="mini-dot" style="background:#152c3a"></div><div class="mini-dot" style="background:#152c3a"></div><div class="mini-dot" style="background:#152c3a"></div></div>
+          <div class="mini-screen"><div class="ml2 acc"></div><div class="ml2 w80"></div><div class="ml2 w60"></div><div class="mini-mbtn"></div></div>
+        </div>
+        <span class="badge health">Saúde</span>
+      </div>
+      <div class="card-info">
+        <div class="card-cat">Clínica / Saúde</div>
+        <div class="card-name">Clínica Vita — Saúde Integrada</div>
+        <div class="card-desc">Site multidisciplinar para clínica em Araraquara com perfil de especialistas e agendamento via WhatsApp.</div>
+        <div class="card-footer">
+          <div class="card-tags"><span class="tag-pill">HTML/CSS</span><span class="tag-pill">Multipage</span><span class="tag-pill">Saúde</span></div>
+          <a href="https://lading-page-clinica.vercel.app/" target="_blank" class="card-link">Abrir →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="about-grid">
+    <div class="about-txt">
+      <div class="sec-tag">Sobre</div>
+      <h2>Código limpo,<br>design que <em>comunica</em>.</h2>
+      <p>Desenvolvo sites profissionais para negócios locais e profissionais de saúde, com foco em identidade visual forte, carregamento rápido e facilidade de uso.</p>
+      <p>Cada projeto começa entendendo o público-alvo do cliente — seja uma clínica de fisioterapia, um consultório ou um pequeno negócio — e termina com um site que representa de verdade quem está por trás dele.</p>
+      <div class="skills-list">
+        <span class="sk">HTML5</span><span class="sk">CSS3</span><span class="sk">JavaScript</span>
+        <span class="sk">React</span><span class="sk">Responsive Design</span>
+        <span class="sk">Vercel / Deploy</span><span class="sk">Figma</span><span class="sk">SEO básico</span>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="av-card accent"><div class="av-num">6+</div><div class="av-lbl">Sites entregues</div></div>
+      <div class="av-card"><div class="av-num">3</div><div class="av-lbl">Projetos de saúde</div></div>
+      <div class="av-card"><div class="av-num">100%</div><div class="av-lbl">Mobile-first</div></div>
+      <div class="av-card"><div class="av-num">&lt;3s</div><div class="av-lbl">Tempo de carga</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="contact-grid">
+    <div>
+      <div class="sec-tag">Contato</div>
+      <h2>Vamos criar o seu<br>site <em>juntos</em>?</h2>
+      <p class="contact-desc">Atendo fisioterapeutas e profissionais de saúde que querem presença online profissional, sem complicação. Respondo em até 24h.</p>
+      <div class="contact-links">
+        <a href="https://wa.me/5516991797003" target="_blank" class="clink">
+          <div class="clink-icon">📱</div>WhatsApp — (16) 99179-7003
+        </a>
+        <a href="mailto:mamontagna100@gmail.com" class="clink">
+          <div class="clink-icon">✉</div>mamontagna100@gmail.com
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="form" id="contactForm">
+        <input type="text" id="f-nome" placeholder="Seu nome">
+        <input type="text" id="f-contato" placeholder="Seu WhatsApp ou e-mail">
+        <textarea id="f-msg" placeholder="Conte sobre seu projeto — especialidade, cidade, o que precisa..."></textarea>
+        <button class="form-btn" id="submitBtn" onclick="enviarWhatsApp()">Enviar pelo WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo">dev<span>folio</span></a>
+  <p>© 2026 — Desenvolvido com cuidado.</p>
+</footer>
+
+<script>
+function enviarWhatsApp() {
+  const nome = document.getElementById('f-nome').value.trim();
+  const contato = document.getElementById('f-contato').value.trim();
+  const msg = document.getElementById('f-msg').value.trim();
+
+  if (!nome || !msg) {
+    document.getElementById('f-nome').style.borderColor = !nome ? 'rgba(220,100,100,.6)' : '';
+    document.getElementById('f-msg').style.borderColor = !msg ? 'rgba(220,100,100,.6)' : '';
+    return;
+  }
+
+  const texto = `Olá Marco! Vi seu portfólio e quero saber mais.\n\n*Nome:* ${nome}\n*Contato:* ${contato || 'não informado'}\n*Projeto:* ${msg}`;
+  const url = 'https://wa.me/5516991797003?text=' + encodeURIComponent(texto);
+  window.open(url, '_blank');
+}
+
+document.getElementById('f-nome').addEventListener('input', function(){ this.style.borderColor = ''; });
+document.getElementById('f-msg').addEventListener('input', function(){ this.style.borderColor = ''; });
+</script>
+
+</body>
+</html>
